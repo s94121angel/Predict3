@@ -3,4 +3,4 @@ deployment:
     tag: latest
   prefix: test
   pullPolicy: Always
-  replicaCount: i
+  replicaCount: 1
