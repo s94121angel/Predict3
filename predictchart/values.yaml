@@ -1,0 +1,6 @@
+deployment:
+  image:
+    tag: latest
+  prefix: test
+  pullPolicy: Always
+  replicaCount: 1

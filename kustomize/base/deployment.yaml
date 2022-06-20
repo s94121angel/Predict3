@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predict-deployment2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: predictApp 2
+  template: 
+    metadata:
+      labels:
+        app: predictApp2
+    spec:
+      containers:
+        - name: predict-container2
+          image: s410071012/node2_predict
+          command: ["/bin/sh"]
+          args: ["-c", "while true; do python3 /home/jovyan/predict-code/inference.py;sleep 10;done"]
+          ports:
+            - containerPort: 3800
+          imagePullPolicy: Always        
+     
+

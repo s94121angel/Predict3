@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Chart.Name }}-deployment2
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: predictApp2
+  template:
+    metadata:
+      labels:
+        app: predictApp2
+    spec:
+      containers:
+      - name: predict-container2
+        image: s410071012/node2_predict:{{ .Values.deployment.image.tag }}
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do python3 /home/jovyan/predict-code/inference.py;sleep 10;done"]
+        ports: 
+          - containerPort: 3800
+        imagePullPolicy: Always
+
