@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 3801
-    targetPort: 3800
+  - port: 4301
+    targetPort: 4300
   selector:
-    app: predictApp2
+    app: predictApp3

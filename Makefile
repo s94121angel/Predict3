@@ -4,7 +4,7 @@ SERVER  =
 COMMIT  =${shell git rev-parse --short HEAD}
 VERSION ?=${COMMIT}
 TYPE    ?=minikube
-REPO_NAME=s410071012/node2_predict
+REPO_NAME=s410071012/node3_predict
 
 
 build-image:

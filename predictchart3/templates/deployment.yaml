@@ -6,18 +6,18 @@ spec:
   replicas: {{ .Values.deployment.replicaCount }}
   selector:
     matchLabels:
-      app: predictApp2
+      app: predictApp3
   template:
     metadata:
       labels:
-        app: predictApp2
+        app: predictApp3
     spec:
       containers:
-      - name: predict-container2
-        image: s410071012/node2_predict:{{ .Values.deployment.image.tag }}
+      - name: predict-container3
+        image: s410071012/node3_predict:{{ .Values.deployment.image.tag }}
         command: ["/bin/sh"]
         args: ["-c", "while true; do python3 /home/jovyan/predict-code/inference.py;sleep 10;done"]
         ports: 
-          - containerPort: 3800
+          - containerPort: 4300
         imagePullPolicy: Always
 
